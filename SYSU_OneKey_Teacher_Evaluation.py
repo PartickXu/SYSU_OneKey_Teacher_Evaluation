@@ -5,7 +5,7 @@
 # @Email: jinjin.lin@outlook.com
 # @License: MIT
 # @Date:   2015-12-02 16:16:31
-# @Last Modified time: 2015-12-03 00:52:28
+# @Last Modified time: 2015-12-03 01:20:22
 # All copyright reserved
 #
 
@@ -40,7 +40,6 @@ class PingJiao:
 
         req = self._session.get("http://uems.sysu.edu.cn/jwxt/jcaptcha", stream=True)
         im = Image.open(StringIO(req.content))
-        im.save(os.getcwd()+"./111.jpg")
         code = self.getCode(im)
         loginData = {
             "j_username": self.username,
